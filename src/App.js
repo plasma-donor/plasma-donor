@@ -15,7 +15,9 @@ import Contact from "./components/contact/Contact";
 const Upload = lazy(() => import("./components/upload/Upload"));
 const Patient = lazy(() => import("./components/patient/Patient"));
 const Patients = lazy(() => import("./components/patients/Patients"));
+const Donors = lazy(() => import("./components/donors/Donors"));
 const Donation = lazy(() => import("./components/donation/Donation"));
+const Donor = lazy(() => import("./components/donor/Donor"));
 
 const renderSpinner = () => {
   return (
@@ -59,6 +61,15 @@ const App = () => {
                 </Route>
                 <Route path="/contact">
                   <Contact></Contact>
+                </Route>
+                <Route path="/donors">
+                  <Donors></Donors>
+                </Route>
+                <Route path="/donor/:id">
+                  <Donor></Donor>
+                </Route>
+                <Route path="/donor">
+                  <Donor></Donor>
                 </Route>
                 <Route path="/">
                   <Login></Login>

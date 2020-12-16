@@ -30,7 +30,7 @@ const initialState = {
   admissionDate: "",
   dischargeDate: "",
   willingToDonate: "Y",
-  hasCovidRecovered: "N",
+  hasCovidRecovered: "Y",
   hasCancerPatient: "N",
   hasHIV: "N",
   hasHepatitis: "N",
@@ -114,7 +114,7 @@ const reducer = (state, action) => {
   }
 };
 
-const Patient = () => {
+const Donor = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
@@ -131,7 +131,6 @@ const Patient = () => {
             if (typeof res.data.data === "string") {
               setMessage(res.data.data);
             } else {
-              // setMessage("Patient form loaded successfully for updating.");
               dispatch({ type: "get", payload: res.data.data });
             }
           }
@@ -160,8 +159,8 @@ const Patient = () => {
         .then((res) => {
           if (res && res.data && res.data.statusCode === 200) {
             setLoading(false);
-            history.push("/patients")
-            // setMessage("Patient successfully updated");
+            history.push("/donors")
+            // setMessage("Donor successfully updated");
             // dispatch({ type: "update" });
           }
         })
@@ -174,8 +173,8 @@ const Patient = () => {
         .then((res) => {
           if (res && res.data && res.data.statusCode === 200) {
             setLoading(false);
-            history.push("/patients")
-            // setMessage("Patient successfully added");
+            history.push("/donors")
+            // setMessage("Donor successfully added");
             // dispatch({ type: "submit" });
           }
         })
@@ -201,7 +200,7 @@ const Patient = () => {
 
   return (
     <>
-      <h4 className="text-center mar-top-bot-2rem">{DATA.msgAddPatient}</h4>
+      <h4 className="text-center mar-top-bot-2rem">{DATA.msgAddDonor}</h4>
       <hr />
       {showMessage()}
       <br />
@@ -453,6 +452,7 @@ const Patient = () => {
               onChange={(e) =>
                 dispatch({ type: "dischargeDate", payload: e.target.value })
               }
+              required
             />
           </Col>
         </Form.Group>
@@ -485,8 +485,8 @@ const Patient = () => {
               }
               disabled
             >
-              <option value="N">No</option>
               <option value="Y">Yes</option>
+              <option value="N">No</option>
             </Form.Control>
           </Col>
         </Form.Group>
@@ -689,4 +689,4 @@ const Patient = () => {
   );
 };
 
-export default Patient;
+export default Donor;

@@ -101,10 +101,19 @@ const Upload = () => {
           <h4 className="text-center mar-top-bot-2rem">{DATA.msgUpload}</h4>
 
           <hr />
-          <Form>
+          <Form
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
+          >
             <Row>
               <Col sm="9" md="9">
-                <Form.File id="upload" name="upload" onChange={onFileChange} required />
+                <Form.File
+                  id="upload"
+                  name="upload"
+                  onChange={onFileChange}
+                  required
+                />
               </Col>
               <Col>
                 <Button variant="primary" type="submit" onClick={onFileUpload}>
