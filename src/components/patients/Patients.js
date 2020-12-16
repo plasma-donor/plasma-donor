@@ -85,6 +85,7 @@ const Patients = () => {
               >
                 Edit
               </span>
+              |
               <span
                 className="link"
                 onClick={() => sendPlasmaRequest(patient.id)}
