@@ -1,0 +1,38 @@
+{
+  "files": {
+    "static/js/0.76e05d3d.chunk.js": "/plasma-donor/static/js/0.76e05d3d.chunk.js",
+    "static/js/0.76e05d3d.chunk.js.map": "/plasma-donor/static/js/0.76e05d3d.chunk.js.map",
+    "main.css": "/plasma-donor/static/css/main.73ca651a.chunk.css",
+    "main.js": "/plasma-donor/static/js/main.d219ae16.chunk.js",
+    "main.js.map": "/plasma-donor/static/js/main.d219ae16.chunk.js.map",
+    "runtime-main.js": "/plasma-donor/static/js/runtime-main.783ea14b.js",
+    "runtime-main.js.map": "/plasma-donor/static/js/runtime-main.783ea14b.js.map",
+    "static/css/3.20aa2d7b.chunk.css": "/plasma-donor/static/css/3.20aa2d7b.chunk.css",
+    "static/js/3.0bbccde2.chunk.js": "/plasma-donor/static/js/3.0bbccde2.chunk.js",
+    "static/js/3.0bbccde2.chunk.js.map": "/plasma-donor/static/js/3.0bbccde2.chunk.js.map",
+    "static/css/4.afd7172b.chunk.css": "/plasma-donor/static/css/4.afd7172b.chunk.css",
+    "static/js/4.64f2c0e9.chunk.js": "/plasma-donor/static/js/4.64f2c0e9.chunk.js",
+    "static/js/4.64f2c0e9.chunk.js.map": "/plasma-donor/static/js/4.64f2c0e9.chunk.js.map",
+    "static/js/5.68de9bdd.chunk.js": "/plasma-donor/static/js/5.68de9bdd.chunk.js",
+    "static/js/5.68de9bdd.chunk.js.map": "/plasma-donor/static/js/5.68de9bdd.chunk.js.map",
+    "static/js/6.82ce7780.chunk.js": "/plasma-donor/static/js/6.82ce7780.chunk.js",
+    "static/js/6.82ce7780.chunk.js.map": "/plasma-donor/static/js/6.82ce7780.chunk.js.map",
+    "static/js/7.bb510d7b.chunk.js": "/plasma-donor/static/js/7.bb510d7b.chunk.js",
+    "static/js/7.bb510d7b.chunk.js.map": "/plasma-donor/static/js/7.bb510d7b.chunk.js.map",
+    "static/js/8.03f3d518.chunk.js": "/plasma-donor/static/js/8.03f3d518.chunk.js",
+    "static/js/8.03f3d518.chunk.js.map": "/plasma-donor/static/js/8.03f3d518.chunk.js.map",
+    "index.html": "/plasma-donor/index.html",
+    "static/css/3.20aa2d7b.chunk.css.map": "/plasma-donor/static/css/3.20aa2d7b.chunk.css.map",
+    "static/css/4.afd7172b.chunk.css.map": "/plasma-donor/static/css/4.afd7172b.chunk.css.map",
+    "static/css/main.73ca651a.chunk.css.map": "/plasma-donor/static/css/main.73ca651a.chunk.css.map",
+    "static/js/3.0bbccde2.chunk.js.LICENSE.txt": "/plasma-donor/static/js/3.0bbccde2.chunk.js.LICENSE.txt",
+    "static/media/plasma-min.28b04e5f.png": "/plasma-donor/static/media/plasma-min.28b04e5f.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.783ea14b.js",
+    "static/css/3.20aa2d7b.chunk.css",
+    "static/js/3.0bbccde2.chunk.js",
+    "static/css/main.73ca651a.chunk.css",
+    "static/js/main.d219ae16.chunk.js"
+  ]
+}
