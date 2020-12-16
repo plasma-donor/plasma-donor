@@ -53,7 +53,7 @@ const App = () => {
                 <Route path="/closerequest">
                   <Donation></Donation>
                 </Route>
-                <Route path="/share">
+                <Route path="/fbshare">
                   <Share></Share>
                 </Route>
                 <Route path="/about">
