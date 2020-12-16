@@ -12,8 +12,8 @@ const TopNav = () => {
     <Navbar bg="dark" variant="dark">
       <Navbar.Brand>
         <img
-          width="24"
-          height="24"
+          width="30"
+          height="30"
           src={brandImg}
           alt={DATA.navBrand}
           title={DATA.navBrand}
