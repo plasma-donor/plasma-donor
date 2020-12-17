@@ -1,6 +1,6 @@
 import brandImg from "../../img/plasma-min.png";
 import React from "react";
-import { Button, Nav, Navbar } from "react-bootstrap";
+import { Button, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { DATA } from "../../constants/en";
 import "./TopNav.css";
@@ -9,7 +9,7 @@ const TopNav = () => {
   let history = useHistory();
 
   return (
-    <Navbar bg="dark" variant="dark">
+    <Navbar collapseOnSelect bg="light" variant="success">
       <Navbar.Brand>
         <img
           width="30"
@@ -31,27 +31,42 @@ const TopNav = () => {
           Saving Lives
         </span>
       </Navbar.Brand>
-      <Nav className="mr-auto">
-        <Link to="/patients" className="nav-link">
-          {DATA.navPatients}
-        </Link>
-        <Link to="/patient" className="nav-link">
-          {DATA.navAddPatient}
-        </Link>
-        <Link to="/upload" className="nav-link">
-          {DATA.navUpload}
-        </Link>
-        <Link to="/closerequest" className="nav-link">
-          {DATA.navDonation}
-        </Link>
-        <Link to="/donors" className="nav-link">
-          {DATA.navDonors}
-        </Link>
-        <Link to="/donor" className="nav-link">
-          {DATA.navDonor}
-        </Link>
-      </Nav>
-      <Navbar.Collapse className="justify-content-end">
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="mr-auto">
+          <NavDropdown title="Patient" id="collasible-nav-dropdown">
+            <Link to="/patients" className="nav-link">
+              {DATA.navPatients}
+            </Link>
+            <Link to="/patient" className="nav-link">
+              {DATA.navAddPatient}
+            </Link>
+          </NavDropdown>
+          <NavDropdown title="Donor" id="collasible-nav-dropdown">
+            <Link to="/donors" className="nav-link">
+              {DATA.navDonors}
+            </Link>
+            <Link to="/donor" className="nav-link">
+              {DATA.navDonor}
+            </Link>
+          </NavDropdown>
+          <NavDropdown title="Request" id="collasible-nav-dropdown">
+            <Link to="/patients" className="nav-link">
+              {DATA.navDonationRaise}
+            </Link>
+            <Link to="/closerequest" className="nav-link">
+              {DATA.navDonation}
+            </Link>
+          </NavDropdown>
+          <NavDropdown title="Upload" id="collasible-nav-dropdown">
+            <Link to="/upload" className="nav-link">
+              {DATA.navUpload}
+            </Link>
+            <Link to="/upload" className="nav-link">
+              {DATA.navUploadPatients}
+            </Link>
+          </NavDropdown>
+        </Nav>
         <Navbar.Text>
           <Button
             variant="primary"

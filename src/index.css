@@ -12,14 +12,14 @@ code {
     monospace;
 }
 
-.navbar-nav a:hover {
+/* .navbar-nav a:hover {
   color: bisque !important;
   text-decoration: underline !important;
 }
 
 .navbar-nav a {
   color: bisque !important;
-}
+} */
 
 .text-center {
   text-align: center;
@@ -34,7 +34,7 @@ code {
   vertical-align: middle !important;
 }
 
-span.link {
+table tr td span.link {
   display: inline-block;
   color: blue;
   cursor: pointer;

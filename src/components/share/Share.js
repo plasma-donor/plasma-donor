@@ -29,7 +29,13 @@ const Share = () => {
                 data-lang="en"
                 data-show-count="false"
               >
-                <Button variant="success" size="sm">Tweet</Button>
+                <Button
+                  style={{ height: "1.7rem", width:"5rem", paddingTop: 0 }}
+                  variant="success"
+                  size="sm"
+                >
+                  Tweet
+                </Button>
               </a>
               <script
                 async
@@ -39,20 +45,19 @@ const Share = () => {
 
               <span
                 class="fb-share-button"
-                data-href="https://pankaj-xor.github.io/plasma/#/fbshare"
+                data-href="https://plasma-donor.github.io/plasma-donor/#/fbshare"
                 data-layout="button"
                 data-size="large"
               >
                 <a
                   target="_blank"
-                  href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpankaj-xor.github.io%2Fplasma%2F%23%2Ffbshare&amp;src=sdkpreparse"
+                  href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fplasma-donor.github.io%2Fplasma%2F%23%2Ffbshare&amp;src=sdkpreparse"
                   class="fb-xfbml-parse-ignore"
                 >
                   {/* <Button variant="primary" size="sm">FB Share</Button> */}
                 </a>
               </span>
             </Card.Text>
-            
           </Card.Body>
         </Card>
       </Col>

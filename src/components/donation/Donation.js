@@ -110,7 +110,6 @@ const Donation = () => {
           <tr key={patient.patientId}>
             <td>{index + 1}</td>
             <td>{patient.patientName}</td>
-            <td>{patient.patientEmail}</td>
             <td>
               <Form.Control
                 type="date"
@@ -138,7 +137,7 @@ const Donation = () => {
                 className="link"
                 onClick={() => closeDonationRequest(patient.patientId)}
               >
-                Close Donation Request
+                Close Request
               </span>
             </td>
           </tr>
@@ -158,7 +157,6 @@ const Donation = () => {
           <tr>
             <th>#</th>
             <th>Name</th>
-            <th>Email</th>
             <th>Donation Date</th>
             <th>Donars List</th>
             <th style={{ textAlign: "center" }}>Actions</th>
