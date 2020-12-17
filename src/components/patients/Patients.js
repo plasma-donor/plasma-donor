@@ -56,9 +56,7 @@ const Patients = () => {
         if (res && res.data && res.data.statusCode === 200) {
           setLoading(false);
           if (typeof res.data.data === "string") {
-            setMessage(res.data.data);
-          } else {
-            setMessage("Plasma request sent successfully");
+            setMessage("Plasma request raised successfully");
           }
         }
       })

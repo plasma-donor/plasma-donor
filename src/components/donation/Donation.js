@@ -54,26 +54,28 @@ const Donation = () => {
       return donor.selected == true;
     });
 
-    setLoading(true);
-    Axios.post(`${API.closeDonationRequest}`, {
-      patientId,
-      donorId: selectedDonor.donorId,
-      donationDate: patient.donationDate,
-    })
-      .then((res) => {
-        if (res && res.data && res.data.statusCode === 200) {
-          setLoading(false);
-          if (typeof res.data.data === "string") {
-            setMessage(res.data.data);
-          } else {
-            setMessage("Donation request closed successfully");
-          }
-        }
+    if (selectedDonor) {
+      setLoading(true);
+      Axios.post(`${API.closeDonationRequest}`, {
+        patientId,
+        donorId: selectedDonor.donorId,
+        donationDate: patient.donationDate,
       })
-      .catch((e) => {
-        setLoading(false);
-        setMessage(DATA.msgError);
-      });
+        .then((res) => {
+          if (res && res.data && res.data.statusCode === 200) {
+            setLoading(false);
+            if (typeof res.data.data === "string") {
+              setMessage(res.data.data);
+            } else {
+              setMessage("Donation request closed successfully");
+            }
+          }
+        })
+        .catch((e) => {
+          setLoading(false);
+          setMessage(DATA.msgError);
+        });
+    }
   };
 
   const onDonorSelect = (patientId, donorId) => {
@@ -158,7 +160,7 @@ const Donation = () => {
             <th>#</th>
             <th>Name</th>
             <th>Donation Date</th>
-            <th>Donars List</th>
+            <th>Matching Donars List</th>
             <th style={{ textAlign: "center" }}>Actions</th>
           </tr>
         </thead>
