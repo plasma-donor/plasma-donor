@@ -53,7 +53,7 @@ const Donors = () => {
     if (patients) {
       return patients.map((patient, index) => {
         return (
-          <tr key={patient.email}>
+          <tr key={patient.id}>
             <td>{index + 1}</td>
             <td>{patient.name}</td>
             <td>{patient.email}</td>

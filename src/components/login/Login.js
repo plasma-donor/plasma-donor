@@ -26,6 +26,7 @@ const Login = () => {
                   type="email"
                   placeholder="Enter email"
                   value="admin@plasma.com"
+                  readOnly
                 />
                 <Form.Text className="text-muted">
                   We'll never share your email with anyone else.
@@ -38,6 +39,7 @@ const Login = () => {
                   type="password"
                   placeholder="Password"
                   value="password"
+                  readOnly
                 />
               </Form.Group>
               
