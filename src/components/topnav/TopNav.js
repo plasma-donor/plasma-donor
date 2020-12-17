@@ -9,7 +9,7 @@ const TopNav = () => {
   let history = useHistory();
 
   return (
-    <Navbar collapseOnSelect bg="light" variant="success">
+    <Navbar collapseOnSelect bg="dark" variant="dark">
       <Navbar.Brand>
         <img
           width="30"

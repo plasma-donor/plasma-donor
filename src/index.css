@@ -19,7 +19,15 @@ code {
 
 .navbar-nav a {
   color: bisque !important;
-} */
+.} */
+
+.dropdown-menu {
+  background-color: #343a40 !important;
+}
+
+.dropdown-menu a {
+  background-color: #343a40;
+}
 
 .text-center {
   text-align: center;
@@ -38,7 +46,7 @@ table tr td span.link {
   display: inline-block;
   color: blue;
   cursor: pointer;
-  margin: 0 .5rem;
+  margin: 0 0.5rem;
 }
 
 span.link:hover {

@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <>
       <hr />
-      <Navbar bg="light" variant="success" sticky="bottom">
+      <Navbar bg="dark" variant="dark" sticky="bottom">
         <Nav className="mr-auto">
           <Link to="/contact" className="nav-link">
             {DATA.footerContactUs}
