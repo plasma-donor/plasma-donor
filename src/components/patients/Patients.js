@@ -105,7 +105,7 @@ const Patients = () => {
       <hr />
       {showMessage()}
       <br />
-      <Table striped bordered hover size="sm">
+      <Table responsive striped bordered hover size="sm">
         <thead>
           <tr>
             <th>#</th>
