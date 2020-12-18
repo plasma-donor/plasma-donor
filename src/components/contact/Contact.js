@@ -4,9 +4,9 @@ const Contact = () => {
   return (
     <Row>
       <Col
-        sm={{ span: 6, offset: 3 }}
-        md={{ span: 6, offset: 3 }}
-        lg={{ span: 6, offset: 3 }}
+        // sm={{ span: 6, offset: 3 }}
+        // md={{ span: 6, offset: 3 }}
+        // lg={{ span: 6, offset: 3 }}
       >
         <br />
         <Card>
