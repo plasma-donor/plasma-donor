@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useState } from "react";
+import React, { useEffect, useReducer, useState, useContext } from "react";
 import { DATA } from "../../constants/en";
 import {
   Button,
@@ -13,6 +13,7 @@ import {
 import Axios from "axios";
 import { API } from "../../constants/api";
 import { useHistory, useParams } from "react-router-dom";
+import { loginContext } from "../../loginContext";
 
 const initialState = {
   name: "",
@@ -120,6 +121,13 @@ const Patient = () => {
   const [message, setMessage] = useState("");
   let { id } = useParams();
   let history = useHistory();
+  const { loggedIn } = useContext(loginContext);
+
+  useEffect(() => {
+    if (!loggedIn) {
+      history.push("/login");
+    }
+  }, [loggedIn, history]);
 
   useEffect(() => {
     if (id) {
@@ -160,7 +168,7 @@ const Patient = () => {
         .then((res) => {
           if (res && res.data && res.data.statusCode === 200) {
             setLoading(false);
-            history.push("/patients")
+            history.push("/patients");
             // setMessage("Patient successfully updated");
             // dispatch({ type: "update" });
           }
@@ -174,7 +182,7 @@ const Patient = () => {
         .then((res) => {
           if (res && res.data && res.data.statusCode === 200) {
             setLoading(false);
-            history.push("/patients")
+            history.push("/patients");
             // setMessage("Patient successfully added");
             // dispatch({ type: "submit" });
           }

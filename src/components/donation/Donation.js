@@ -1,9 +1,11 @@
 // import logo from "./logo.svg";
 import Axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Alert, Form, Spinner, Table } from "react-bootstrap";
 import { DATA } from "../../constants/en";
 import { API } from "../../constants/api";
+import { loginContext } from "../../loginContext";
+import { useHistory } from "react-router-dom";
 
 const patientsList = [];
 
@@ -11,6 +13,14 @@ const Donation = () => {
   const [patients, setPatients] = useState(patientsList);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  let history = useHistory();
+  const { loggedIn } = useContext(loginContext);
+
+  useEffect(() => {
+    if (!loggedIn) {
+      history.push("/login");
+    }
+  }, [loggedIn, history]);
 
   useEffect(() => {
     setLoading(true);

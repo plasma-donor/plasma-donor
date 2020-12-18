@@ -1,15 +1,25 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Button, Form, Alert, Spinner, Row, Col, Table } from "react-bootstrap";
 import "./Upload.css";
 import { API } from "../../constants/api";
 import { DATA } from "../../constants/en";
+import { useHistory } from "react-router-dom";
+import { loginContext } from "../../loginContext";
 
 const Upload = () => {
   // Initially, no file is selected
   const [selectedFile, setSelectedFile] = useState(null);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(DATA.msgChooseFile);
+  let history = useHistory();
+  const { loggedIn } = useContext(loginContext);
+
+  useEffect(() => {
+    if (!loggedIn) {
+      history.push("/login");
+    }
+  }, [loggedIn, history]);
 
   // On file select (from the pop up)
   const onFileChange = (event) => {

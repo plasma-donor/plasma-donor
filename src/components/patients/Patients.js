@@ -1,10 +1,11 @@
 // import logo from "./logo.svg";
 import Axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Alert, Spinner, Table } from "react-bootstrap";
 import { DATA } from "../../constants/en";
 import { API } from "../../constants/api";
 import { useHistory } from "react-router-dom";
+import { loginContext } from "../../loginContext";
 
 const patientsList = [];
 
@@ -13,6 +14,13 @@ const Patients = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   let history = useHistory();
+  const { loggedIn } = useContext(loginContext);
+
+  useEffect(() => {
+    if (!loggedIn) {
+      history.push("/login");
+    }
+  }, [loggedIn, history]);
 
   useEffect(() => {
     setLoading(true);

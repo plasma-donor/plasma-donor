@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useState } from "react";
+import React, { useContext, useEffect, useReducer, useState } from "react";
 import { DATA } from "../../constants/en";
 import {
   Button,
@@ -13,6 +13,7 @@ import {
 import Axios from "axios";
 import { API } from "../../constants/api";
 import { useHistory, useParams } from "react-router-dom";
+import { loginContext } from "../../loginContext";
 
 const initialState = {
   name: "",
@@ -120,6 +121,13 @@ const Donor = () => {
   const [message, setMessage] = useState("");
   let { id } = useParams();
   let history = useHistory();
+  const { loggedIn } = useContext(loginContext);
+
+  useEffect(() => {
+    if (!loggedIn) {
+      history.push("/login");
+    }
+  }, [loggedIn, history]);
 
   useEffect(() => {
     if (id) {

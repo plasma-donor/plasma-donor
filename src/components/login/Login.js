@@ -1,12 +1,18 @@
 // import logo from "./logo.svg";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Button, Card, Col, Form, Row } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { loginContext } from "../../loginContext";
 
 const Login = () => {
   let history = useHistory();
-  const { setLoggedIn } = useContext(loginContext);
+  const { loggedIn, setLoggedIn } = useContext(loginContext);
+
+  useEffect(() => {
+    if (loggedIn) {
+      history.push("/patients");
+    }
+  }, [loggedIn, history]);
 
   return (
     <Row>
