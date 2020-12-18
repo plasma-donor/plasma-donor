@@ -1,9 +1,11 @@
 export const URL = {
   local: "http://localhost:8080/",
   server: "https://plasma-donor.herokuapp.com/",
+  aws: "http://plasmadonation-env.eba-hycfdfsp.us-east-2.elasticbeanstalk.com/",
 };
 
-const env = URL.server;
+// const env = URL.server;
+const env = URL.aws;
 
 export const API = {
   upload: `${env}api/patient/upload`,
