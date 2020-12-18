@@ -12,8 +12,15 @@ const About = () => {
         <Card>
           <Card.Header>About Us</Card.Header>
           <Card.Body>
-            <Card.Title>About Us</Card.Title>
-            <Card.Text>About Us.</Card.Text>
+            {/* <Card.Title>About Us</Card.Title> */}
+            <Card.Text>
+              We help to CONNECTING THOSE IN NEED. Please join us in with
+              fighting against Corona Virus.
+              <br />
+              <br />
+              For more details or any queries please write us @
+              plasma.donor.demo@gmail.com
+            </Card.Text>
           </Card.Body>
         </Card>
       </Col>

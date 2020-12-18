@@ -23,4 +23,5 @@ export const DATA = {
   navDonationRaise: "Raise Request",
   footerContactUs: "Contact Us",
   footerAboutUs: "About Us",
+  footerFAQ: "FAQ",
 };

@@ -10,11 +10,12 @@ const Footer = () => {
       <hr />
       <Navbar bg="dark" variant="dark" sticky="bottom">
         <Nav className="mr-auto">
-          <Link to="/contact" className="nav-link">
-            {DATA.footerContactUs}
-          </Link>
+          <Navbar.Text>&copy;</Navbar.Text>
           <Link to="/about" className="nav-link">
             {DATA.footerAboutUs}
+          </Link>
+          <Link to="/faq" className="nav-link">
+            {DATA.footerFAQ}
           </Link>
         </Nav>
       </Navbar>
