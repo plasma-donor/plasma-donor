@@ -1,5 +1,5 @@
 // import logo from "./logo.svg";
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import { Container } from "react-bootstrap";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { Spinner } from "react-bootstrap";
@@ -11,6 +11,7 @@ import Login from "./components/login/Login";
 import Share from "./components/share/Share";
 import About from "./components/about/About";
 import Contact from "./components/contact/Contact";
+import { loginContext } from "./loginContext";
 
 const Upload = lazy(() => import("./components/upload/Upload"));
 const Patient = lazy(() => import("./components/patient/Patient"));
@@ -30,51 +31,54 @@ const renderSpinner = () => {
 };
 
 const App = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
   return (
     <>
       <Container>
         <div className="App">
           <Suspense fallback={renderSpinner()}>
             <Router>
-              <TopNav></TopNav>
-              <Switch>
-                <Route path="/patients">
-                  <Patients></Patients>
-                </Route>
-                <Route path="/patient/:id">
-                  <Patient></Patient>
-                </Route>
-                <Route path="/patient">
-                  <Patient></Patient>
-                </Route>
-                <Route path="/upload">
-                  <Upload></Upload>
-                </Route>
-                <Route path="/closerequest">
-                  <Donation></Donation>
-                </Route>
-                <Route path="/fbshare">
-                  <Share></Share>
-                </Route>
-                <Route path="/about">
-                  <About></About>
-                </Route>
-                <Route path="/contact">
-                  <Contact></Contact>
-                </Route>
-                <Route path="/donors">
-                  <Donors></Donors>
-                </Route>
-                <Route path="/donor/:id">
-                  <Donor></Donor>
-                </Route>
-                <Route path="/donor">
-                  <Donor></Donor>
-                </Route>
-                <Route path="/">
-                  <Login></Login>
-                </Route>
-              </Switch>
+              <loginContext.Provider value={{ loggedIn, setLoggedIn }}>
+                <TopNav></TopNav>
+                <Switch>
+                  <Route path="/patients">
+                    <Patients></Patients>
+                  </Route>
+                  <Route path="/patient/:id">
+                    <Patient></Patient>
+                  </Route>
+                  <Route path="/patient">
+                    <Patient></Patient>
+                  </Route>
+                  <Route path="/upload">
+                    <Upload></Upload>
+                  </Route>
+                  <Route path="/closerequest">
+                    <Donation></Donation>
+                  </Route>
+                  <Route path="/fbshare">
+                    <Share></Share>
+                  </Route>
+                  <Route path="/about">
+                    <About></About>
+                  </Route>
+                  <Route path="/contact">
+                    <Contact></Contact>
+                  </Route>
+                  <Route path="/donors">
+                    <Donors></Donors>
+                  </Route>
+                  <Route path="/donor/:id">
+                    <Donor></Donor>
+                  </Route>
+                  <Route path="/donor">
+                    <Donor></Donor>
+                  </Route>
+                  <Route path="/">
+                    <Login></Login>
+                  </Route>
+                </Switch>
+              </loginContext.Provider>
               <Footer></Footer>
             </Router>
           </Suspense>

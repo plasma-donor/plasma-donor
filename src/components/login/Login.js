@@ -1,10 +1,13 @@
 // import logo from "./logo.svg";
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Card, Col, Form, Row } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
+import { loginContext } from "../../loginContext";
 
 const Login = () => {
   let history = useHistory();
+  const { setLoggedIn } = useContext(loginContext);
+
   return (
     <Row>
       <Col
@@ -42,15 +45,16 @@ const Login = () => {
                   readOnly
                 />
               </Form.Group>
-              
+
               <Form.Group controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="Remember me" />
               </Form.Group>
-              
+
               <Button
                 variant="primary"
                 type="submit"
                 onClick={() => {
+                  setLoggedIn(true);
                   history.push("/patients");
                 }}
               >
